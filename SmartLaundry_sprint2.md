@@ -27,3 +27,36 @@ flowchart TD
     class A,D,E model
     class H,I result
 ```
+PIM (Platform Independent Model) adalah rancangan sistem yang belum terikat pada platform tertentu. PSM (Platform Specific Model) menyesuaikan rancangan tersebut dengan teknologi web atau Android.
+
+**Catatan:** Diagram ini menggambarkan konsep MDA. Pembuatan kode otomatis tetap memerlukan alat transformasi atau generator yang sesuai.
+
+## 3. Context Model — Smart Laundry
+
+Context Model memperlihatkan hubungan sistem Smart Laundry dengan pihak dan layanan yang berinteraksi dengannya.
+
+```mermaid
+flowchart TB
+    A["Pelanggan"]
+    B["Petugas Laundry"]
+    C["Mesin Cuci dan Pengering"]
+    D["Layanan Notifikasi"]
+    E["Database Pesanan"]
+    F["Layanan Pembayaran"]
+    G["SISTEM SMART LAUNDRY"]
+
+    A --- G
+    B --- G
+    C --- G
+    D --- G
+    E --- G
+    F --- G
+
+    style G fill:#d9f2ff,stroke:#168aad,stroke-width:3px,color:#111
+    style A fill:#fff3e0,stroke:#fb8c00,stroke-width:2px,color:#111
+    style B fill:#fff3e0,stroke:#fb8c00,stroke-width:2px,color:#111
+    style C fill:#ffffff,stroke:#168aad,stroke-width:2px,color:#111
+    style D fill:#ffffff,stroke:#168aad,stroke-width:2px,color:#111
+    style E fill:#ffffff,stroke:#168aad,stroke-width:2px,color:#111
+    style F fill:#ffffff,stroke:#168aad,stroke-width:2px,color:#111
+```
