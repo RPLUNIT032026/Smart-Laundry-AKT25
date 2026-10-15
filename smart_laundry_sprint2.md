@@ -12,12 +12,6 @@ Model-Driven Architecture (MDA) menjelaskan bagaimana rancangan sistem dapat dij
 
 ```mermaid
 flowchart TD
-   # PIM Model Sistem Smart Laundry
-
-Diagram berikut menggambarkan proses pengembangan sistem Smart Laundry dari PIM menjadi dua versi, yaitu Web dan Android.
-
-```mermaid
-flowchart TD
     A["PIM<br/>Model Sistem Smart Laundry"]
 
     A --> B["Transformasi ke Web"]
