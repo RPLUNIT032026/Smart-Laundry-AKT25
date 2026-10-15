@@ -12,20 +12,32 @@ Model-Driven Architecture (MDA) menjelaskan bagaimana rancangan sistem dapat dij
 
 ```mermaid
 flowchart TD
+   # PIM Model Sistem Smart Laundry
+
+Diagram berikut menggambarkan proses pengembangan sistem Smart Laundry dari PIM menjadi dua versi, yaitu Web dan Android.
+
+```mermaid
+flowchart TD
     A["PIM<br/>Model Sistem Smart Laundry"]
+
     A --> B["Transformasi ke Web"]
     A --> C["Transformasi ke Android"]
-    B --> D["PSM Web"]
-    C --> E["PSM Android"]
-    D --> F["Implementasi Aplikasi Web"]
-    E --> G["Implementasi Aplikasi Android"]
-    F --> H["Smart Laundry versi Web"]
-    G --> I["Smart Laundry versi Android"]
 
-    classDef model fill:#e1f5fe,stroke:#0288d1,stroke-width:2px,color:#111
-    classDef result fill:#e8f5e9,stroke:#388e3c,stroke-width:2px,color:#111
-    class A,D,E model
-    class H,I result
+    B --> D["PMS Web"]
+    D --> E["Implementasi ke Web"]
+    E --> F["Smart Laundry Versi Web"]
+
+    C --> G["PMS Android"]
+    G --> H["Implementasi ke Android"]
+    H --> I["Smart Laundry Versi Android"]
+
+    classDef pink fill:#f8cecc,stroke:#b85450,color:#000
+    classDef yellow fill:#fff2cc,stroke:#d6b656,color:#000
+    classDef purple fill:#e1d5e7,stroke:#9673a6,color:#000
+
+    class A,D,G pink
+    class B,C,F,I yellow
+    class E,H purple
 ```
 
 PIM (Platform Independent Model) adalah rancangan sistem yang belum terikat pada platform tertentu. PSM (Platform Specific Model) menyesuaikan rancangan tersebut dengan teknologi web atau Android.
