@@ -219,24 +219,8 @@ stateDiagram-v2
 
 ### 7.2 Status Mesin Laundry
 
-```mermaid
-stateDiagram-v2
-    direction LR
-    state "Siaga" as Siaga
-    state "Beroperasi" as Operasi
-    state "Selesai" as Selesai
-    state "Gangguan" as Gangguan
-    state "Perawatan" as Perawatan
+<img width="1242" height="176" alt="status_mesin_laundry drawio" src="https://github.com/user-attachments/assets/c859826b-cc84-46bb-afc0-fcef1648202f" />
 
-    [*] --> Siaga: Mesin siap digunakan
-    Siaga --> Operasi: Siklus laundry dimulai
-    Operasi --> Selesai: Siklus selesai
-    Selesai --> Siaga: Mesin dikosongkan dan siap kembali
-    Siaga --> Gangguan: Gangguan terdeteksi
-    Operasi --> Gangguan: Terjadi gangguan saat bekerja
-    Gangguan --> Perawatan: Pemeriksaan dimulai
-    Perawatan --> Siaga: Mesin dinyatakan normal
-```
 
 | Status | Keterangan |
 |---|---|
