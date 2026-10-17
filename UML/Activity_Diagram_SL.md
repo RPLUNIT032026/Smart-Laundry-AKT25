@@ -2,34 +2,8 @@
 
 Activity Diagram ini menggambarkan alur aktivitas pelanggan ketika membuat pesanan laundry, mulai dari membuka aplikasi hingga pesanan tersimpan atau proses berakhir karena data tidak valid.
 
-```mermaid
-flowchart TD
-    A([Mulai]) --> B[Pelanggan membuka aplikasi Smart Laundry]
-    B --> C[Pelanggan melihat layanan dan harga]
-    C --> D[Pelanggan memilih layanan]
-    D --> E[Pelanggan mengisi detail cucian]
-    E --> F{Data pesanan lengkap?}
+<img width="692" height="1422" alt="Activity_diagramSL drawio" src="https://github.com/user-attachments/assets/3ad6b468-2b5a-43f7-9f40-f396e836e791" />
 
-    F -- Tidak --> G[Tampilkan pesan untuk melengkapi data]
-    G --> E
-
-    F -- Ya --> H[Sistem menghitung perkiraan biaya]
-    H --> I[Pelanggan memeriksa rincian pesanan]
-    I --> J{Pelanggan melanjutkan pesanan?}
-
-    J -- Tidak --> K([Pesanan tidak dilanjutkan])
-    J -- Ya --> L[Sistem menyimpan pesanan]
-    L --> M[Sistem membuat nomor pesanan]
-    M --> N[Sistem menampilkan konfirmasi pesanan]
-    N --> O([Selesai])
-
-    classDef startEnd fill:#e8f5e9,stroke:#388e3c,stroke-width:2px,color:#111
-    classDef process fill:#e1f5fe,stroke:#0288d1,stroke-width:1.5px,color:#111
-    classDef decision fill:#fff3e0,stroke:#fb8c00,stroke-width:1.5px,color:#111
-    class A,K,O startEnd
-    class B,C,D,E,G,H,I,L,M,N process
-    class F,J decision
-```
 
 ### Keterangan Aktivitas
 
