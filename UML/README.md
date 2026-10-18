@@ -1,3 +1,59 @@
-# UML Diagram Smart Laundry
+<div align="center">
 
-Folder ini berisi diagram UML untuk proyek Smart Laundry, meliputi Use Case Diagram, Activity Diagram, Sequence Diagram, dan State Diagram.
+# 🧺 Smart Laundry
+
+### Dokumentasi UML Diagram
+
+*Perancangan aplikasi laundry pintar berbasis Rekayasa Perangkat Lunak*
+
+![UML](https://img.shields.io/badge/UML-Diagram-blue)
+![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
+![Mata Kuliah](https://img.shields.io/badge/Mata%20Kuliah-RPL-green)
+
+</div>
+
+---
+
+## 📖 Tentang Proyek
+
+**Smart Laundry** adalah aplikasi layanan laundry yang memudahkan pelanggan membuat pesanan, memantau status cucian, dan membayar secara digital. Admin mengelola layanan dan pesanan, sedangkan kurir menangani pengambilan dan pengantaran cucian.
+
+Folder ini berisi seluruh diagram UML yang dibuat untuk merancang sistem tersebut.
+
+## 📂 Daftar Diagram
+
+| No | Diagram | Fungsi | File |
+|----|---------|--------|------|
+| 1 | Context Model | Batasan sistem dan aliran data dengan entitas luar | [Lihat](./Context%20Model_Diagram_SL.md) |
+| 2 | Use Case Diagram | Menunjukkan interaksi aktor dengan sistem | [Lihat](./Use_Case_Diagram_.md) |
+| 3 | Activity Diagram | Menggambarkan alur aktivitas sistem | [Lihat](./Activity_Diagram_SL.md) |
+| 4 | Sequence Diagram | Menggambarkan urutan pesan antar objek | [Lihat](./sequence_diagram_SL.md) |
+| 5 | State Diagram | Menggambarkan perubahan status objek | [Lihat](./State_Diagram_SL.md) |
+| 6 | Class Diagram | Menggambarkan struktur kelas dan relasinya | [Lihat](./Class_Diagram_SL.md) |
+
+
+## 👥 Aktor Sistem
+
+- **Pelanggan** : membuat pesanan, memantau status, dan membayar
+- **Admin** : mengelola pesanan, dan proses pencucian
+- **Mesin laundry** : menjalankan proses cuci dan mengirim status mesin ke sistem
+
+## 🛠️ Tools
+
+- [draw.io](https://app.diagrams.net) untuk pembuatan diagram
+- GitHub untuk dokumentasi dan kolaborasi tim
+
+## 🧑‍💻 Tim Pengembang
+
+| Nama | NIM |
+|------|-----| 
+| Rati Rifa | 250504152 |
+| Ilma Zakiyah | 250504151 |
+| M. Syauqan Athaya | 250504164 |
+---
+
+<div align="center">
+
+Dibuat untuk tugas mata kuliah **Rekayasa Perangkat Lunak** 💙
+
+</div>
