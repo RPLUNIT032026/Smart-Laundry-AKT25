@@ -17,5 +17,5 @@ Diagram ini menggambarkan proses pemantauan status mesin cuci pada sistem Smart 
 
 **Catatan:** Diagram ini merupakan rancangan konseptual. Implementasi pemantauan real-time memerlukan mesin/perangkat sensor, koneksi komunikasi, dan perangkat lunak yang mendukung pengiriman data.
 
-<img width="1280" height="1040" alt="WhatsApp Image 2026-10-18 at 5 42 13 PM" src="https://github.com/user-attachments/assets/27bbf0bb-f704-4c2b-809d-f65e63e63a03" />
+<img width="2891" height="2351" alt="Activity-Diagram-Smart-Laundry" src="https://github.com/user-attachments/assets/0e94a7dc-253a-421b-b4df-0b13776df2b5" />
 
