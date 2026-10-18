@@ -1,11 +1,11 @@
-## 3. Context Model — Smart Laundry
+## Context Model — Smart Laundry
 
 Context Model memperlihatkan hubungan sistem Smart Laundry dengan pihak dan layanan yang berinteraksi dengannya.
 
 <img width="922" height="212" alt="Diagram Tanpa Judul drawio" src="https://github.com/user-attachments/assets/79660823-b8be-48c5-bdb7-dd2bc15c8295" />
 
 
-### Keterangan
+## Keterangan
 
 1. **Pelanggan:** membuat pesanan dan melihat perkembangan cucian.
 2. **Petugas Laundry:** mencatat pesanan, mengelola antrean, dan memperbarui status proses.
