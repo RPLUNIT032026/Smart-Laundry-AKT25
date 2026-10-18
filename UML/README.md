@@ -45,15 +45,16 @@ Folder ini berisi seluruh diagram UML yang dibuat untuk merancang sistem tersebu
 
 ## 🧑‍💻 Tim Pengembang
 
-| Nama | NIM |
-|------|-----| 
-| Rati Rifa | 250504152 |
-| Ilma Zakiyah | 250504151 |
-| M. Syauqan Athaya | 250504164 |
+| Nama | NIM | Akun Github |
+|------|-----| ----- |
+| Rati Rifa | 250504152 | [@ratirifa](https://github.com/ratirifa) |
+| Ilma Zakiyah | 250504151 | [@ilmazakiyah](https://github.com/ilmazakiyah) |
+| M. Syauqan Athaya | 250504164 | [@sauqanathaya-crypto](https://github.com/sauqanathaya-crypto) |
 ---
 
 <div align="center">
+  
+Sprint 2 kelar! Diagram udah jadi, kopi udah habis, mata udah sepet😵
 
-Dibuat untuk tugas mata kuliah **Rekayasa Perangkat Lunak** 💙
-
+Dibuat dengan penuh semangat, begadang, dan revisi yang gak ada habisnya 😎🧺
 </div>
