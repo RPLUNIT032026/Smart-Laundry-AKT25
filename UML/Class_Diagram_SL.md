@@ -2,8 +2,6 @@
 
 Class Diagram ini menggambarkan struktur kelas pada sistem Smart Laundry Digital Twin untuk mengelola data pengguna, memantau status mesin cuci, mengatur antrean laundry, dan mengirimkan notifikasi kepada pengguna.
 
-<img width="1672" height="941" alt="Diagram Kelas Smart Laundry Digital Twin" src="https://github.com/user-attachments/assets/c29b7201-243e-44e6-997d-f14854e0fcc3" />
+<img width="1280" height="721" alt="WhatsApp Image 2026-10-18 at 10 09 28 PM" src="https://github.com/user-attachments/assets/a6fcdf89-69a4-4677-9933-27c98782316f" />
 
-Kesimpulan
 
-Class Diagram ini menjadi gambaran awal struktur data dan hubungan antarkelas dalam sistem Smart Laundry Digital Twin. Diagram dapat dikembangkan lebih lanjut sesuai kebutuhan implementasi aplikasi.
