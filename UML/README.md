@@ -24,11 +24,11 @@ Folder ini berisi seluruh diagram UML yang dibuat untuk merancang sistem tersebu
 
 | No | Diagram | Fungsi | File |
 |----|---------|--------|------|
-| 1 | Context Model | Batasan sistem dan aliran data dengan entitas luar | [Lihat](./Context%20Model_Diagram_SL.md) |
-| 2 | Use Case Diagram | Menunjukkan interaksi aktor dengan sistem | [Lihat](./Use_Case_Diagram_SL.md) |
-| 3 | Activity Diagram | Menggambarkan alur aktivitas sistem | [Lihat](./Activity_Diagram_SL.md) |
+| 1 | Context Model | Batasan sistem dan aliran data dengan entitas luar | [Lihat](./1. Context%20Model_Diagram_SL.md) |
+| 2 | Use Case Diagram | Menunjukkan interaksi aktor dengan sistem | [Lihat](./2. Use_Case_Diagram_SL.md) |
+| 3 | Activity Diagram | Menggambarkan alur aktivitas sistem | [Lihat](./3. Activity_Diagram_SL.md) |
 | 4 | Sequence Diagram | Menggambarkan urutan pesan antar objek | [Lihat](./sequence_diagram_SL.md) |
-| 5 | State Diagram | Menggambarkan perubahan status objek | [Lihat](./State_Diagram_SL.md) |
+| 5 | State Diagram | Menggambarkan perubahan status objek | [Lihat](./6. State_Diagram_SL.md) |
 | 6 | Class Diagram | Menggambarkan struktur kelas dan relasinya | [Lihat](./Class_Diagram_SL.md) |
 
 
