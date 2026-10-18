@@ -8,7 +8,7 @@
 [![MK](https://img.shields.io/badge/MK-RPL-556B2F?style=for-the-badge&logo=github&logoColor=white)]()
 [![Sprint](https://img.shields.io/badge/Sprint-01-DB7093?style=for-the-badge&logo=sprint&logoColor=white)]()
 [![Team](https://img.shields.io/badge/Team-SmartLaundry-556B2F?style=for-the-badge&logo=users&logoColor=white)]()
-
+[![Sprint](https://img.shields.io/badge/Sprint-02-DB7093?style=for-the-badge&logo=sprint&logoColor=white)]()
 </div>
 
 ---
@@ -36,11 +36,6 @@
 
 ---
 
-## 🎯 Fokus Sprint 1 (Saat Ini)
-* 📋 **Project Charter & Perencanaan:** Menyusun latar belakang, ruang lingkup, dan daftar kebutuhan sistem.
-* 📐 **Function Point & Backlog:** Menghitung estimasi metrik ukuran aplikasi dan menyusun *Product Backlog*.
-* 🎨 **Desain UI/UX & Arsitektur:** Membuat *wireframe* dan alur sistem (*flowchart* / database).
-* ⚙️ **Project Setup:** Inisialisasi struktur repositori awal di GitHub organisasi.
 
 ---
 
