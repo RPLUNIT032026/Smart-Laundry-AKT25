@@ -30,7 +30,7 @@
 | :---: | :---: | :---: |
 | **Project Lead** | **UI/UX Designer** | **Backend Engineer** |
 | NIM: [250504151] | NIM: [250504164] | NIM: [250504152] |
-| [@ilmazakiyah](https://github.com) | [@sauqanathayaa-crypto](https://github.com) | [@ratirifa](https://github.com) |
+| [@ilmazakiyah](https://github.com/ilmazakiyah) | [@sauqanathayaa-crypto](https://github.com/sauqanathayaa-crypto) | [@ratirifa](https://github.com/ratirifa) |
 
 </div>
 
