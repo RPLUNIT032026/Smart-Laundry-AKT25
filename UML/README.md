@@ -16,7 +16,7 @@
 
 ## 📖 Tentang Proyek
 
-**Smart Laundry** adalah aplikasi layanan laundry yang memudahkan pelanggan membuat pesanan, memantau status cucian, dan membayar secara digital. Admin mengelola layanan dan pesanan, sedangkan kurir menangani pengambilan dan pengantaran cucian.
+**Smart Laundry** adalah aplikasi layanan laundry yang memudahkan pelanggan membuat pesanan, memantau status cucian, dan membayar secara digital. Petugas mengelola pesanan dan proses pencucian, sedangkan mesin laundry menjalankan proses cuci dan mengirim statusnya ke sistem.
 
 Folder ini berisi seluruh diagram UML yang dibuat untuk merancang sistem tersebut.
 
