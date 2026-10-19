@@ -107,3 +107,10 @@ CREATE TABLE IF NOT EXISTS waiting_queue (
     joined_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
+Ringkasan struktur tabelnya:
+
+| Tabel | Kolom utama | Fungsi |
+|---|---|---|
+| `pengguna` | id, nama_belakang, hash_kata_sandi, peran | Akun admin dan operator |
+| `mesin` | id_mesin, nama_mesin, status, waktu_tersisa_menit, suhu_celsius | Status mesin cuci secara real-time |
+| `antrian_menunggu` | id_antrian, nama_pelanggan, nomor_telepon, status_antrian | Antrian pelanggan |
