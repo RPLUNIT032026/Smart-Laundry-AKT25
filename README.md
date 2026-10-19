@@ -36,17 +36,3 @@
 
 ---
 
-
----
-
-## 🚀 Cara Menjalankan Proyek
-
-```bash
-# Clone repository ini ke komputer lokal
-git clone [https://github.com/RPLUNITO32026/smart-laundry.git](https://github.com/RPLUNITO32026/smart-laundry.git)
-
-# Masuk ke direktori proyek
-cd smart-laundry
-
-# Jalankan server lokal untuk melihat preview web
-python -m http.server 8000
