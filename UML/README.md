@@ -37,7 +37,7 @@ Folder ini berisi seluruh diagram UML yang dibuat untuk merancang sistem tersebu
 ## 👥 Aktor Sistem
 
 - **Pelanggan** : membuat pesanan, memantau status, dan membayar
-- **Admin** : mengelola pesanan dan proses pencucian
+- **Petugas** : mengelola pesanan dan proses pencucian
 - **Mesin laundry** : menjalankan proses cuci dan mengirim status mesin ke sistem
 
 ## 🛠️ Tools
