@@ -68,7 +68,7 @@ Halaman yang direncanakan: **Login**, **Dashboard**, **Status Mesin**, **Kapasit
 
 ## 🧩 Dokumentasi
 
-Dokumentasi proyek meliputi model context, use case diagram, sequence diagram, activity diagram, rancangan arsitektur, dan desain UI/UX. Lihat folder `UML/`, `Perencanaan proyek/`, dan dokumen `designdanarsiktektur.md` pada repository utama.
+Dokumentasi proyek meliputi model context, use case diagram, sequence diagram, activity diagram, rancangan arsitektur, dan desain UI/UX. Lihat folder `sprint 2/`, `sprint 1/`, dan dokumen `designdanarsiktektur.md` pada repository utama.
 
 ## 🛠️ Teknologi
 
