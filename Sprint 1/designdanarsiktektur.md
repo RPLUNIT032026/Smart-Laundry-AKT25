@@ -266,10 +266,10 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    L["🌸 LOGIN<br/"] --> P["🧺 PELANGGAN<br/>Pesanan & pembayaran"]
-    L --> T["🍋 PETUGAS<br/>Operasional laundry"]
-    L --> O["💜 OWNER<br/>Ringkasan & laporan"]
-    P --> M["🫧 DIGITAL TWIN<br/>Monitoring mesin"]
+    L["LOGIN<br/"] --> P["PELANGGAN<br/>Pesanan & pembayaran"]
+    L --> T["PETUGAS<br/>Operasional laundry"]
+    L --> O["OWNER<br/>Ringkasan & laporan"]
+    P --> M["DIGITAL TWIN<br/>Monitoring mesin"]
     T --> M
     O --> M
     classDef pink fill:#F8BBD0,stroke:#D78FA8,color:#3F3447,stroke-width:2px;
