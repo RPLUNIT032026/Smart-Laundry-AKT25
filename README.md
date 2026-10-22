@@ -5,9 +5,9 @@
 
 **Pantau mesin • Kelola transaksi • Tingkatkan pelayanan**
 
-![Status](https://img.shields.io/badge/Status-Dalam%20Pengembangan-blue)
-![Platform](https://img.shields.io/badge/Platform-Web-0ea5e9)
-![Project](https://img.shields.io/badge/Project-Rekayasa%20Perangkat%20Lunak-8b5cf6)
+![Status](https://img.shields.io/badge/Status-Dalam%20Pengembangan-pink)
+![Platform](https://img.shields.io/badge/Platform-Web-yellow)
+![Project](https://img.shields.io/badge/Project-Rekayasa%20Perangkat%20Lunak-pink)
 
 </div>
 
