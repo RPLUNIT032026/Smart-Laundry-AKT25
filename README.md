@@ -79,8 +79,8 @@ Platform yang dituju adalah **aplikasi web**. Bahasa pemrograman, framework, dat
 | Nama | Peran | NIM | GitHub |
 | --- | --- | --- | --- |
 | Ilma Zakiyah | Project Lead | 250504151 | [@ilmazakiyah](https://github.com/ilmazakiyah) |
-| Rati Rifa | Backend Engineer | 250504152 | [@ratirifa](https://github.com/ratirifa) |
-| M. Syauqan Athaya | UI/UX Designer | 250504164 | [@sauqanathayaa-crypto](https://github.com/sauqanathayaa-crypto) |
+| Rati Rifa | UI/UX Designer | 250504152 | [@ratirifa](https://github.com/ratirifa) |
+| M. Syauqan Athaya | Backend Engineer | 250504164 | [@sauqanathayaa-crypto](https://github.com/sauqanathayaa-crypto) |
 ## 📌 Status Pengembangan
 
 Proyek sedang dikembangkan dan didokumentasikan sebagai bagian dari kegiatan Rekayasa Perangkat Lunak. Pembaruan diagram, mockup, implementasi, dan pengujian akan dicatat secara bertahap.
