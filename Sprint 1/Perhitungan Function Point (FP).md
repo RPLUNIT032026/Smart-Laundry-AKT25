@@ -1,61 +1,29 @@
-#  Perhitungan Function Point (FP) 
+# Estimasi Function Point — Smart Laundry (Revisi)
 
-## 1. Daftar Fitur & Perhitungan Unadjusted Function Count (UFC)
-Tabel estimasi ukuran aplikasi dan fungsionalitas berdasarkan rancangan fitur sistem *Smart Laundry Digital Twin*:
+> Estimasi **awal**, bukan pengukuran IFPUG tersertifikasi. Kompleksitas final harus ditentukan dari DET, FTR, dan RET setelah kebutuhan disepakati.
 
-| No. | Nama Fungsi / Fitur Sistem | Jenis Komponen | Tingkat Kerumitan | Bobot | Total |
-| :---: | :--- | :---: | :---: | :---: | :---: |
-| 1 | Input data konfigurasi unit mesin cuci (kapasitas, tipe) | **EI** | Sederhana | 3 | 3 |
-| 2 | Input data status sensor mesin (*live* waktu, getaran, status) | **EI** | Sedang | 4 | 8 |
-| 3 | Tampilan antarmuka dashboard visualisasi status unit | **EO** | Sedang | 5 | 10 |
-| 4 | Tampilan rekapitulasi status area ruang tunggu | **EO** | Sedang | 5 | 10 |
-| 5 | Fitur pencarian ketersediaan mesin cuci (*filter*) | **EQ** | Sederhana | 3 | 3 |
-| 6 | Basis data penyimpanan rekam jejak operasional mesin | **ILF** | Kompleks | 15 | 15 |
-| 7 | Integrasi data simulasi IoT/sensor washer | **EIF** | Sedang | 7 | 7 |
-| **TOTAL UFC** | | | | | **56 FP** |
+## 1. Unadjusted Function Point (UFP)
+Menggunakan bobot standar kompleksitas rendah sebagai asumsi awal untuk menghindari angka total yang tidak memiliki jumlah fungsi.
 
----
+| Fungsi | Tipe | Jumlah | Bobot/unit | Subtotal |
+|---|---|---:|---:|---:|
+| Membuat pesanan | EI | 1 | 3 | 3 |
+| Mengubah status pesanan | EI | 1 | 3 | 3 |
+| Mencatat pembayaran | EI | 1 | 3 | 3 |
+| Menerima status mesin | EI | 1 | 3 | 3 |
+| Melihat detail/status pesanan | EQ | 1 | 3 | 3 |
+| Melihat status mesin | EQ | 1 | 3 | 3 |
+| Ringkasan operasional owner | EO | 1 | 4 | 4 |
+| Riwayat aktivitas/status | EO | 1 | 4 | 4 |
+| Data pengguna | ILF | 1 | 7 | 7 |
+| Data pesanan dan pembayaran* | ILF | 2 | 7 | 14 |
+| Data mesin dan riwayat status* | ILF | 2 | 7 | 14 |
+| **TOTAL UFP** | | | | **61** |
 
-## 2. Penilaian 14 Faktor Penyesuaian Sistem (General System Characteristics / GSC)
-Skala penilaian menggunakan rentang nilai 0 (tidak ada pengaruh) hingga 5 (pengaruh sangat esensial):
+*Asumsi dua kelompok logis terpisah masing-masing; perlu validasi batas file logis saat desain rinci. Simulator internal **tidak otomatis** dihitung sebagai EIF. Autentikasi dan fungsi lain belum dihitung tersendiri untuk menghindari klaim tanpa spesifikasi transaksi elementer.
 
-| No. | Faktor Pengaruh Sistem | Nilai (0–5) |
-| :---: | :--- | :---: |
-| 1 | Komunikasi data (koneksi web & peladen) | 2 |
-| 2 | Fungsi terdistribusi (arsitektur modular) | 1 |
-| 3 | Kinerja sistem (*responsiveness*) | 2 |
-| 4 | Konfigurasi perangkat keras (kompatibilitas server) | 1 |
-| 5 | Tingkat transaksi data harian | 2 |
-| 6 | Masukan data pengguna secara interaktif | 2 |
-| 7 | Kemudahan efisiensi pengguna (*user experience*) | 3 |
-| 8 | Pembaruan data langsung (*live update*) | 3 |
-| 9 | Kompleksitas pemrosesan logika sistem | 2 |
-| 10 | Penggunaan kembali kode (*reusability*) | 2 |
-| 11 | Kemudahan instalasi perangkat lunak | 2 |
-| 12 | Kemudahan operasional bagi admin | 3 |
-| 13 | Dukungan multi-perangkat (*responsive design*) | 1 |
-| 14 | Kemudahan modifikasi fitur di masa depan | 2 |
-| **JUMLAH TOTAL ($\sum F$)** | | **28** |
+## 2. Penyesuaian
+Gunakan 14 General System Characteristics hanya bila metode perkuliahan mensyaratkan adjusted FP. Nilai sebelumnya 28 belum dievaluasi ulang terhadap perubahan cakupan. Sebagai **simulasi saja**, jika TDI = 28 maka VAF = 0,65 + 0,01 × 28 = **0,93**, sehingga adjusted FP = 61 × 0,93 = **56,73 FP**.
 
----
-
-## 3. Perhitungan Value Adjustment Factor (VAF)
-Rumus standar perhitungan faktor penyesuaian sistem:
-
-$$VAF = 0,65 + (0,01 \times \sum F)$$
-$$VAF = 0,65 + (0,01 \times 28)$$
-$$VAF = 0,65 + 0,28 = 0,93$$
-
----
-
-## 4. Hasil Akhir Function Point (FP)
-Perhitungan total ukuran fungsional perangkat lunak:
-
-$$FP = UFC \times VAF$$
-$$FP = 56 \times 0,93 = 52,08 \text{ FP}$$
-
----
-
-## 5. Kesimpulan
-> Ukuran fungsional keseluruhan proyek **Smart Laundry (Digital Twin System)** pada tahap perencanaan Sprint 1 adalah **52,08 Function Point**, menunjukkan skala sistem yang terstruktur menengah dan siap dikembangkan secara bertahap.
-> 
+## 3. Kesimpulan
+**61 UFP** adalah estimasi perencanaan sementara. **56,73 adjusted FP** hanya berlaku pada asumsi TDI 28. Tidak boleh menyatakan angka ini ukuran final sebelum klasifikasi dan tingkat kompleksitas diverifikasi.

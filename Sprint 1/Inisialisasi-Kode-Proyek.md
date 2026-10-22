@@ -1,116 +1,45 @@
-Inisialisasi Proyek — Smart Laundry Digital Twin
+# Inisialisasi Kode Proyek — Rencana Teknis
 
+> **Status:** rancangan struktur dan contoh kontrak; ZIP dokumentasi ini **belum menyertakan** implementasi `backend/`, `frontend/`, `simulator/`, atau `database/`. Jangan menjalankan perintah seolah file sudah ada.
+
+## Struktur yang direncanakan
 ```text
-smart-laundry-akt25/
-|-- backend/ (server.js, package.json)
-|-- frontend/ (index.html, style.css, app.js)
-|-- simulator/ (machine_simulator.js)
-|-- database/ (schema.sql)
-|-- README.md
+smart-laundry/
+├── frontend/           # UI pelanggan, petugas, owner
+├── backend/            # API autentikasi, orders, payments, machines
+├── simulator/          # pembaruan status mesin (simulasi)
+├── database/           # migrasi dan seed data
+├── Sprint 1/           # dokumen perencanaan
+├── Sprint 2/           # delapan dokumen UML
+└── README.md
 ```
 
-markdown Smart Laundry Digital Twin System
-
-Pengembangan sistem Digital Twin untuk monitoring status mesin cuci dan manajemen antrean pelanggan secara real-time. Setup kode dasar untuk Sprint 1 — Product Release 1 (Pendekatan Scrum).
-
-## Struktur Direktori
-
-```text
-smart-laundry-akt25/
-|-- backend/          # Node.js & Express REST API (Logika server)
-|-- frontend/         # Antarmuka web dashboard antrean (HTML/CSS/JS)
-|-- simulator/        # Script simulator untuk data sensor IoT mesin cuci
-|-- database/         # File skema database MySQL (smart_laundry_db)
-|-- README.md         # File dokumentasi utama
-```
-
-## Panduan Menjalankan Sistem
-
-```bash
-# 1) Inisialisasi Server Backend
-cd backend
-npm install
-node init_db.js
-npm start
-
-# 2) Menjalankan Simulator IoT
-cd simulator
-npm install
-node machine_simulator.js
-
-# 3) Menjalankan Frontend Web
-cd frontend
-npm install
-npm start
-```
-
-Akses default (hanya untuk environment development): `admin` / `admin123`, `operator` / `operator123`.
-
-## Daftar Endpoint API
-
-| Method | Endpoint | Kegunaan |
-| :--- | :--- | :--- |
-| GET | `/api/health` | Memeriksa koneksi dan status server |
-| POST | `/api/login` | Proses autentikasi user (username & password) |
-| GET | `/api/machines` | Mengambil seluruh data status mesin cuci |
-| POST | `/api/machines/status` | Menerima update data dari sensor mesin |
-| GET | `/api/queue` | Melihat daftar antrean saat ini |
-| POST | `/api/queue/add` | Mendaftarkan pelanggan baru ke antrean |
-
-## Konfigurasi Database
-
-Tabel utama yang digunakan: `users`, `machines`, `waiting_queue`, `transactions` — selengkapnya di `database/schema.sql`.
-
-## Aturan Version Control (Git)
-
-- Pembagian Branch: `main` (rilis stabil), `develop` (penggabungan fitur), dan `feature/<nama-fitur>` (pengerjaan fitur baru).
-- Manajemen tugas dilakukan melalui GitHub Projects (Sprint & Product Backlog).
-- Setiap kode yang masuk ke `develop` wajib melalui tahapan Pull Request dan direview oleh rekan tim.
-
-## `.gitignore`
-
-```text
-node_modules/
-*.log
-.env
-.DS_Store
-```
-
-## `database/schema.sql`
-
-```sql
--- Skema Database Sistem Smart Laundry (MySQL)
-
-CREATE TABLE IF NOT EXISTS users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL UNIQUE,
-    password_hash VARCHAR(255) NOT NULL,
-    role ENUM('admin', 'operator') NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE IF NOT EXISTS machines (
-    machine_id INT AUTO_INCREMENT PRIMARY KEY,
-    machine_name VARCHAR(50) NOT NULL,
-    status ENUM('Available', 'Running', 'Maintenance') DEFAULT 'Available',
-    remaining_time_minutes INT DEFAULT 0,
-    temperature_celsius DECIMAL(5,2) DEFAULT 0.00,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
-
-CREATE TABLE IF NOT EXISTS waiting_queue (
-    queue_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_name VARCHAR(100) NOT NULL,
-    phone_number VARCHAR(15) NOT NULL,
-    assigned_machine_id INT,
-    queue_status ENUM('Waiting', 'Processing', 'Finished') DEFAULT 'Waiting',
-    joined_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
-Ringkasan struktur tabelnya:
-
-| Tabel | Kolom utama | Fungsi |
+## Modul dan Endpoint Usulan
+| Metode | Endpoint | Tujuan |
 |---|---|---|
-| `pengguna` | id, nama_belakang, hash_kata_sandi, peran | Akun admin dan operator |
-| `mesin` | id_mesin, nama_mesin, status, waktu_tersisa_menit, suhu_celsius | Status mesin cuci secara real-time |
-| `antrian_menunggu` | id_antrian, nama_pelanggan, nomor_telepon, status_antrian | Antrian pelanggan |
+| POST | `/api/auth/login` | Autentikasi |
+| GET/POST | `/api/orders` | Daftar / buat pesanan |
+| GET | `/api/orders/:id` | Detail dan status pesanan |
+| PATCH | `/api/orders/:id/status` | Pembaruan status oleh petugas |
+| POST | `/api/orders/:id/payments` | Pencatatan pembayaran |
+| GET | `/api/machines` | Status Digital Twin mesin |
+| POST | `/api/machines/:id/telemetry` | Input status simulator/perangkat (terotorisasi) |
+| GET | `/api/owner/summary` | Ringkasan owner |
+| GET | `/api/history` | Riwayat sesuai izin akses |
+
+Endpoint ini **belum dibuktikan terimplementasi**; sesuaikan dengan rancangan Sequence dan Component Sprint 2.
+
+## Entitas Minimal
+`users(id, name, role, password_hash)`; `orders(id, customer_id, machine_id, service_type, price, status, created_at)`; `payments(id, order_id, amount, method, status, paid_at)`; `machines(id, name, status, remaining_minutes, updated_at)`; `machine_status_history(id, machine_id, status, source, recorded_at)`; `order_status_history(id, order_id, status, recorded_at)`.
+
+## Alur Data Digital Twin
+1. Simulator atau perangkat mengirim identitas mesin, status, sisa waktu, cap waktu.
+2. Backend memvalidasi mesin, sumber, dan rentang nilai.
+3. Status terkini dan riwayat diperbarui.
+4. Dashboard menampilkan status terbaru dan penanda data terlambat.
+
+## Keamanan dan Praktik Pengembangan
+Gunakan password hash, token/sesi aman, pembatasan akses per peran, variabel lingkungan untuk rahasia, validasi input, serta `.gitignore` untuk `.env` dan `node_modules`. **Jangan mencantumkan kredensial default nyata di dokumentasi.**
+
+## Langkah implementasi selanjutnya
+Buat direktori kode, migrasi database, backend API, simulator, UI, dan tes integrasi; dokumentasikan perintah instalasi **setelah** `package.json` dan skrip benar-benar tersedia.
