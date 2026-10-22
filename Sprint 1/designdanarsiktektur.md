@@ -266,7 +266,7 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    L["🌸 LOGIN<br/>Pink pastel"] --> P["🧺 PELANGGAN<br/>Pesanan & pembayaran"]
+    L["🌸 LOGIN<br/"] --> P["🧺 PELANGGAN<br/>Pesanan & pembayaran"]
     L --> T["🍋 PETUGAS<br/>Operasional laundry"]
     L --> O["💜 OWNER<br/>Ringkasan & laporan"]
     P --> M["🫧 DIGITAL TWIN<br/>Monitoring mesin"]
