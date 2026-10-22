@@ -1,65 +1,232 @@
-# Desain dan Arsitektur — Smart Laundry Digital Twin
+# 2.1 Rancangan UX/UI - Smart Laundry
 
-## 1. Konsep Sistem
-Smart Laundry adalah aplikasi web layanan laundry dengan Digital Twin mesin. Pelanggan memesan layanan, petugas memproses cucian, owner memantau operasional, dan simulator/perangkat mengirim status mesin. **Status pesanan berbeda dari status mesin.**
+Aplikasi dipakai oleh tiga aktor, yaitu **Pelanggan**, **Petugas**, dan **Owner** (sesuai Use Case dan Sequence Diagram Sprint 2). Setiap aktor masuk dengan akunnya (pada tahap pengembangan memakai akun dummy) dan melihat menu sesuai perannya.
 
-## 2. Arsitektur Logis
-```mermaid
-flowchart LR
-  P[Pelanggan] --> W[Web UI]
-  T[Petugas] --> W
-  O[Owner] --> W
-  W <--> API[Backend API + Otorisasi]
-  API <--> DB[(Database)]
-  M[Mesin / Simulator] --> ING[Status Ingestion]
-  ING --> API
-  API --> DT[Representasi Digital Twin]
-  DT --> W
-```
-**Catatan:** diagram ini rancangan, bukan bukti integrasi perangkat nyata.
+# 1. Alur Navigasi Aplikasi
 
-## 3. Alur Bisnis
 ```mermaid
 flowchart TD
-  A[Login atau identifikasi pelanggan] --> B[Buat pesanan]
-  B --> C[Pesanan tersimpan]
-  C --> D[Catat / konfirmasi pembayaran]
-  D --> E[Petugas menerima pesanan]
-  E --> F[Tetapkan mesin yang tersedia]
-  F --> G[Mesin berjalan dan mengirim status]
-  G --> H[Digital Twin dan dashboard diperbarui]
-  H --> I[Proses pencucian selesai]
-  I --> J[Petugas menuntaskan pesanan]
-  J --> K[Pelanggan melihat status akhir]
-```
-Urutan pembayaran terhadap pencucian harus mengikuti aturan yang ditetapkan kelompok dan transisi State Pesanan Sprint 2.
 
-## 4. Model Data Konseptual
+    A["Splash Screen"] --> B["Login"]
+    B --> V{"Akun valid?"}
+    V -- "Tidak" --> B
+    V -- "Ya" --> R{"Peran pengguna"}
+
+    R -- "Pelanggan" --> MP["Menu Pelanggan"]
+    R -- "Petugas" --> MT["Menu Petugas"]
+    R -- "Owner" --> MO["Menu Owner"]
+
+    MP --> P1["Buat Pesanan"]
+    MP --> P2["Status Pesanan"]
+    MP --> P3["Pembayaran Digital"]
+    MP --> G["Status Laundry"]
+    MP --> H["Profil"]
+    MP --> I["Keluar"]
+
+    MT --> D["Tambah Pelanggan"]
+    MT --> E["Proses Transaksi"]
+    MT --> T1["Perbarui Status Pesanan dan Mesin"]
+    MT --> F["Data Transaksi"]
+    MT --> G
+    MT --> H
+    MT --> I
+
+    MO --> G
+    MO --> F
+    MO --> O1["Konfigurasi Mesin"]
+    MO --> H
+    MO --> I
+
+    D --> D1["Input Nama"]
+    D1 --> D2["Input No HP"]
+    D2 --> D3["Simpan Data"]
+    D3 --> MT
+
+    E --> E1["Pilih Pelanggan"]
+    E1 --> E2["Pilih Layanan"]
+    E2 --> E3["Input Berat"]
+    E3 --> E4["Hitung Harga"]
+    E4 --> E5["Simpan Transaksi"]
+    E5 --> MT
+
+    P1 --> P1a["Pilih Layanan dan Input Berat"]
+    P1a --> P1b["Konfirmasi Pesanan"]
+    P1b --> MP
+    P2 --> P2a["Lihat Status Pesanan"]
+    P2a --> MP
+    P3 --> P3a["Pilih Pesanan dan Bayar"]
+    P3a --> MP
+
+    F --> F1["Pilih Transaksi"]
+    F1 --> F2["Detail Transaksi"]
+    F2 --> BACK["Kembali ke Menu sesuai Peran"]
+
+    G --> G1["Lihat Status Mesin"]
+    G1 --> G2["Lihat Kapasitas"]
+    G2 --> BACK
+
+    H --> H1["Data Pengguna"]
+    H1 --> H2["Pengaturan"]
+    H2 --> BACK
+
+    I --> J["Konfirmasi Keluar"]
+    J --> K["Logout dan kembali ke Login"]
+```
+
+Halaman bersama (Status Laundry, Data Transaksi, Profil) selalu kembali ke menu aktor yang sedang login.
+
+# 2.2 Rancangan Sistem
+
+## 1. Arsitektur Sistem
+
+```mermaid
+flowchart TD
+
+    USER["Pengguna (Pelanggan / Petugas / Owner)"]
+    UI["Frontend Web Smart Laundry"]
+    API["Backend REST API (Login, Pesanan, Pembayaran, Status Mesin)"]
+    DB[("Database MySQL")]
+    SIM["Simulator Mesin Laundry (data sensor IoT)"]
+
+    USER --> UI
+    UI <--> API
+    API <--> DB
+    SIM --> API
+```
+
+Arsitektur ini sejalan dengan struktur kode pada *Inisialisasi-Kode-Proyek* (`frontend/`, `backend/`, `database/`, `simulator/`). Pembagian komponen dan penempatan perangkat yang lebih rinci dijabarkan pada Component Diagram dan Deployment Diagram di Sprint 2.
+
+---
+
+## 2. Flowchart Sistem
+
+```mermaid
+flowchart TD
+
+    START(["Mulai"])
+    LOGIN["Login dengan akun"]
+    VALID{"Akun valid?"}
+    MENU["Tampilkan Menu sesuai Peran"]
+    PILIH{"Pilih Menu"}
+
+    TAMBAH["Tambah Pelanggan"]
+    TRANSAKSI["Proses Transaksi"]
+    DATA["Lihat Data Transaksi"]
+    STATUS["Lihat Status Mesin dan Kapasitas"]
+    KELUAR["Keluar"]
+
+    INPUT1["Input Nama dan No HP"]
+    SIMPAN1["Simpan Data Pelanggan"]
+
+    PILIHPEL["Pilih Pelanggan"]
+    LAYANAN["Pilih Layanan Laundry"]
+    BERAT["Input Berat Pakaian"]
+    HARGA["Hitung Harga"]
+    SIMPAN2["Simpan Pesanan dan Transaksi"]
+
+    DATABASE[("Database")]
+
+    START --> LOGIN
+    LOGIN --> VALID
+    VALID -- "Tidak" --> LOGIN
+    VALID -- "Ya" --> MENU
+    MENU --> PILIH
+
+    PILIH --> TAMBAH
+    PILIH --> TRANSAKSI
+    PILIH --> DATA
+    PILIH --> STATUS
+    PILIH --> KELUAR
+
+    TAMBAH --> INPUT1
+    INPUT1 --> SIMPAN1
+    SIMPAN1 --> DATABASE
+    DATABASE --> MENU
+
+    TRANSAKSI --> PILIHPEL
+    PILIHPEL --> LAYANAN
+    LAYANAN --> BERAT
+    BERAT --> HARGA
+    HARGA --> SIMPAN2
+    SIMPAN2 --> DATABASE
+
+    DATA --> DATABASE
+    STATUS --> DATABASE
+
+    KELUAR --> LOGOUT["Logout"]
+    LOGOUT --> SELESAI(["Selesai"])
+```
+
+Menu "Tambah Pelanggan" dan "Proses Transaksi" hanya tersedia bagi Petugas; Pelanggan membuat pesanannya sendiri dan Owner melihat data transaksi serta status mesin.
+
+---
+
+## 3. ERD / Struktur Database
+
 ```mermaid
 erDiagram
-  USERS ||--o{ ORDERS : creates
-  ORDERS ||--o{ PAYMENTS : has
-  ORDERS }o--o| MACHINES : uses
-  MACHINES ||--o{ MACHINE_STATUS_HISTORY : reports
-  ORDERS ||--o{ ORDER_STATUS_HISTORY : tracks
-  USERS { int id PK string name string role string password_hash }
-  ORDERS { int id PK int customer_id FK int machine_id FK string service_type decimal price string status datetime created_at }
-  PAYMENTS { int id PK int order_id FK decimal amount string status string method datetime paid_at }
-  MACHINES { int id PK string name string status int remaining_minutes datetime updated_at }
-  MACHINE_STATUS_HISTORY { int id PK int machine_id FK string status string source datetime recorded_at }
-  ORDER_STATUS_HISTORY { int id PK int order_id FK string status datetime recorded_at }
+
+    USERS ||--o| CUSTOMERS : "memiliki akun"
+    CUSTOMERS ||--o{ ORDERS : "membuat"
+    MACHINES ||--o{ ORDERS : "memproses"
+    ORDERS ||--o{ PAYMENTS : "dibayar lewat"
+    ORDERS ||--o| WAITING_QUEUE : "masuk antrean"
+    MACHINES ||--o{ WAITING_QUEUE : "melayani"
+
+    USERS {
+        int id PK
+        string username
+        string password_hash
+        string role
+    }
+
+    CUSTOMERS {
+        int customer_id PK
+        int user_id FK
+        string customer_name
+        string phone_number
+    }
+
+    MACHINES {
+        int machine_id PK
+        string machine_name
+        string machine_type
+        float capacity_kg
+        string status
+        int remaining_time_minutes
+        float temperature_celsius
+    }
+
+    ORDERS {
+        int order_id PK
+        int customer_id FK
+        int machine_id FK
+        string service_type
+        float weight_kg
+        float total_price
+        string order_status
+        string created_at
+        string finished_at
+    }
+
+    PAYMENTS {
+        int payment_id PK
+        int order_id FK
+        float amount
+        string payment_method
+        string payment_status
+        string paid_at
+    }
+
+    WAITING_QUEUE {
+        int queue_id PK
+        int order_id FK
+        int assigned_machine_id FK
+        string queue_status
+        string joined_at
+    }
 ```
-**Catatan relasi:** `ORDERS.machine_id` boleh kosong sebelum mesin dialokasikan. Untuk siklus multi-mesin di masa depan, gunakan tabel penugasan terpisah.
 
-## 5. Komponen
-- **Frontend:** halaman pelanggan, petugas, owner, dan monitoring.
-- **Backend:** autentikasi, pesanan, pembayaran, mesin, riwayat, laporan.
-- **Database:** users, orders, payments, machines, riwayat status.
-- **Simulator / adapter:** mengirim data status mesin ke backend.
-- **Digital Twin service:** memelihara representasi mesin terkini dari update bertimestamp.
+Struktur ERD ini identik dengan `database/schema.sql` pada dokumen *Inisialisasi-Kode-Proyek*.
 
-## 6. Integritas Status
-Pisahkan enumerasi `order_status`, `payment_status`, dan `machine_status`. Nilai akhir harus mengikuti diagram State Sprint 2; jangan menyamakan `Finished` pada pesanan dengan `Available` pada mesin tanpa aturan transisi.
-
-## 7. Keterkaitan UML
-Context = aktor dan sistem eksternal; Use Case = kemampuan aktor; Activity = monitoring mesin; Sequence = skenario pelanggan, petugas, owner; State = status pesanan dan mesin; Class = model domain; Component = layanan; Deployment = lokasi runtime.
+---
