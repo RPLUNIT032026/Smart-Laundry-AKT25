@@ -20,8 +20,8 @@ Pengelolaan fasilitas *laundry* koin mandiri saat ini masih sering menemui kenda
 * **Tools Manajemen Tugas:** GitHub Projects.
 
 ## 5. Struktur Tim Pengembang
-| Nama Lengkap | NIM | Peran & Tanggung Jawab |
-| :--- | :---: | :--- |
-| Ilma Zakiyah | 250504151 | Project Lead & Scrum Master |
-| M.Syauqan Athaya | 250504164 | System Analyst & UI/UX Designer |
-| Rati Rifa | 250504152 | Backend Engineer |
+| Nama Lengkap | NIM |
+| :--- | :---: | 
+| Ilma Zakiyah | 250504151 | 
+| M.Syauqan Athaya | 250504164 |
+| Rati Rifa | 250504152 |
