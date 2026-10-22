@@ -1,5 +1,52 @@
 # UI/UX Design — Smart Laundry Digital Twin
 
+# 🎨 UI/UX Design - Smart Laundry Digital Twin
+
+Dokumen ini berisi panduan antarmuka (User Interface) dan pengalaman pengguna (User Experience) untuk aplikasi **Smart Laundry**. Desain dibuat responsif, modern, dan berfokus pada kemudahan pelacakan status (real-time) serta monitoring mesin IoT.
+
+## 1. Design System & Guidelines
+
+### A. Palet Warna (Color Palette)
+| Warna | Kode Hex | Penggunaan |
+| :--- | :--- | :--- |
+| **Primary Blue** | `#2563EB` | Tombol utama, header, ikon aktif |
+| **Success Green** | `#10B981` | Status "Selesai", indikator mesin hidup |
+| **Warning Yellow** | `#F59E0B` | Status "Dicuci", "Antrean" |
+| **Danger Red** | `#EF4444` | Status "Dibatalkan", Error |
+| **Background** | `#F8FAFC` | Latar belakang halaman |
+| **Card Surface** | `#FFFFFF` | Latar belakang kartu, tabel, form |
+| **Text Main** | `#1E293B` | Teks judul dan isi utama |
+| **Text Muted** | `#64748B` | Teks sekunder, placeholder |
+
+### B. Tipografi
+- **Font Utama:** `Inter`, `Segoe UI`, atau `sans-serif`.
+- **Heading 1 (Judul):** 24px, Bold (`font-weight: 700`).
+- **Body Text:** 14px, Regular (`font-weight: 400`).
+- **Button Text:** 14px, SemiBold (`font-weight: 600`).
+
+---
+
+## 2. Wireframe & User Flow (Menggunakan Mermaid)
+
+### A. Halaman Login
+Halaman masuk terpusat. Aktor memilih *role* (Pelanggan/Petugas/Owner) untuk diarahkan ke *dashboard* masing-masing.
+
+```mermaid
+graph TD
+    classDef box fill:#fff,stroke:#cbd5e1,stroke-width:2px,rx:10,ry:10;
+    classDef input fill:#f8fafc,stroke:#94a3b8,stroke-width:1px;
+    classDef btn fill:#2563eb,stroke:none,color:#fff,font-weight:bold;
+
+    subgraph "Halaman Login"
+        Logo["🧺 SMART LAUNDRY<br/>Digital Twin System"]:::box
+        UserIn["Username: [_______________]"]:::input
+        RoleIn["Role: [ Pelanggan ▼ ]"]:::input
+        PassIn["Password: [_______________]"]:::input
+        BtnLogin["[ LOGIN SISTEM ]"]:::btn
+        
+        Logo --> UserIn --> RoleIn --> PassIn --> BtnLogin
+    end
+
 ## 1. Tujuan
 Merancang pengalaman untuk tiga aktor pada Sprint 2: **Pelanggan**, **Petugas**, dan **Owner**, dengan informasi status mesin dari **Mesin/Simulator**. Status pesanan, pembayaran, dan mesin harus ditampilkan terpisah.
 
@@ -29,13 +76,13 @@ flowchart TD
   E --> E3[Monitoring Mesin]
 ```
 
-## 4. User Flow Utama
+## 3. User Flow Utama
 **Pelanggan:** masuk → pilih layanan → isi detail pesanan → konfirmasi → lihat nomor pesanan → lihat status/pembayaran.  
 **Petugas:** masuk → daftar pesanan → pilih pesanan → verifikasi pembayaran bila diperlukan → tetapkan mesin → perbarui tahap pengerjaan.  
 **Owner:** masuk → ringkasan operasional → filter periode → lihat rincian status mesin/pesanan.  
 **Digital Twin:** simulator mengirim status → backend memvalidasi → tampilan mesin dan waktu terakhir diperbarui.
 
-## 5. Wireframe Teks (untuk digambar ulang di Figma/draw.io)
+## 4. Wireframe Teks (untuk digambar ulang di Figma/draw.io)
 ### A. Pelanggan — Daftar Pesanan
 ```text
 +--------------------------------------------------+
