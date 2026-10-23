@@ -91,6 +91,4 @@ Proyek sedang dikembangkan dan didokumentasikan sebagai bagian dari kegiatan Rek
 
 **Smart Laundry — Solusi Pemantauan Laundry yang Lebih Cerdas 🫧**
 
-[🏠 Repository Utama](https://github.com/RPLUNIT032026/Smart-Laundry-AKT25)
-
 </div>
