@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🫧 SMART LAUNDRY
+#  SMART LAUNDRY
 ### Digital Twin System untuk Monitoring Mesin Cuci & Kapasitas Laundry
 
 **Pantau mesin • Kelola transaksi • Tingkatkan pelayanan**
@@ -44,23 +44,8 @@ Dengan Smart Laundry, informasi status mesin, estimasi sisa waktu pencucian, dan
 
 ## 🔄 Gambaran Alur Sistem
 
-```mermaid
-flowchart TD
-    A([Mulai]) --> B[Login]
-    B --> C{Data login valid?}
-    C -- Tidak --> B
-    C -- Ya --> D[Dashboard]
-    D --> E[Monitoring mesin & kapasitas]
-    D --> F[Kelola pelanggan]
-    D --> G[Kelola transaksi]
-    D --> H[Profil & pengaturan]
-    E --> D
-    F --> D
-    G --> D
-    H --> D
-    D --> I[Logout]
-    I --> J([Selesai])
-```
+<img width="857" height="522" alt="readme drawio" src="https://github.com/user-attachments/assets/2e029f4c-6964-4908-84f0-d9b8c7f82ee9" />
+
 
 ## 🖥️ Rancangan UI/UX
 
