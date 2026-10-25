@@ -2,11 +2,11 @@
 
 ![Smart Laundry Banner](https://capsule-render.vercel.app/api?type=waving&color=0:FFD6E7,50:D6EAF8,100:CDB4DB&height=220&section=header&text=SMART%20LAUNDRY&fontSize=48&fontColor=526584&fontAlignY=38&desc=Digital%20Twin%20System&descSize=21&descAlignY=60&animation=fadeIn)
 
-# 🫧 Welcome to Our Smart Laundry Project! 🧺
+# 🫧 Welcome to Our Smart Laundry Project!🫧
 
 ![Typing SVG](https://readme-typing-svg.demolab.com?font=Comic+Neue&weight=600&size=23&duration=3000&pause=900&color=BC8FCE&center=true&vCenter=true&width=650&height=65&lines=Halo!+%F0%9F%91%8B;Selamat+Datang+di+Smart+Laundry!;Smart+Laundry+Digital+Twin+System;Wash+Smart%2C+Live+Easy!)
 
-**✨ Making Laundry Smarter, Easier, and More Efficient ✨**
+**✨🧺 Making Laundry Smarter, Easier, and More Efficient 🧺✨**
 
 ![Status](https://img.shields.io/badge/Status-In%20Development-FFD6E7?style=for-the-badge&labelColor=8B719B)
 ![Project](https://img.shields.io/badge/Project-Digital%20Twin-D6EAF8?style=for-the-badge&labelColor=7899B2)
