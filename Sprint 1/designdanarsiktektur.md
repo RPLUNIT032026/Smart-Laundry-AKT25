@@ -245,30 +245,4 @@ Merancang antarmuka responsif untuk tiga aktor yang dijelaskan dalam dokumentasi
 | Pembayaran belum terverifikasi | Jangan menampilkan status “Lunas” |
 | Akses ditolak | Tampilkan pesan izin tidak mencukupi dan tautan kembali |
 
-## 9. Matriks layar dan UML Sprint 2
 
-| Layar | Aktor | Diagram rujukan Sprint 2 |
-|---|---|---|
-| Login dan navigasi role | Semua | Use Case, Sequence |
-| Buat Pesanan | Pelanggan | Use Case, Activity, Sequence |
-| Detail dan Status Pesanan | Pelanggan | State, Sequence |
-| Daftar dan Proses Pesanan | Petugas | Use Case, Sequence |
-| Dashboard Owner | Owner | Use Case, Sequence |
-| Monitoring Mesin | Sesuai hak akses | State Mesin, Activity, Component |
-| Detail Mesin dan riwayat | Sesuai hak akses | Class, State, Component |
-| Integrasi simulator/backend | Sistem | Component, Deployment |
-
-**Catatan sinkronisasi:** tabel ini menunjukkan dokumen UML yang perlu dicocokkan. Sebelum implementasi, pastikan tiap aksi, role, status, dan relasi memang tersedia pada gambar UML Sprint 2 versi final.
-
-## 10. Rencana validasi dan hasil Sprint 1
-
-- [x] Menentukan konsep visual pastel dan komponen UI.
-- [x] Menulis sitemap dan user flow.
-- [x] Menyusun wireframe teks untuk halaman utama.
-- [x] Mendefinisikan kondisi error, kosong, loading, dan data simulasi.
-- [ ] Menggambar mockup visual desktop dan mobile di Figma atau Draw.io.
-- [ ] Membuat prototype klik antarhalaman.
-- [ ] Melakukan pengujian tugas dengan perwakilan Pelanggan, Petugas, dan Owner.
-- [ ] Memverifikasi semua status, role, dan aksi dengan gambar UML Sprint 2 final.
-
-**Status dokumen:** spesifikasi UI/UX siap dipakai sebagai dasar desain visual dan implementasi; belum merupakan aplikasi atau hasil usability testing.
