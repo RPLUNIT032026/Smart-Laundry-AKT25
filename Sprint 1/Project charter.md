@@ -1,4 +1,4 @@
-# "Pengembangan Sistem Digital Twin Smart Laundry untuk Pemantauan Status Operasional dan Kapasitas Ruang Secara Live"
+# Pengembangan Sistem Digital Twin Smart Laundry untuk Pemantauan Status Operasional dan Kapasitas Ruang Secara Live
 
 ## 1. Latar Belakang Masalah
 Pengelolaan fasilitas *laundry* koin mandiri saat ini masih sering menemui kendala operasional, seperti ketidakpastian informasi ketersediaan mesin cuci, antrean pengunjung yang menumpuk di lokasi, serta kurangnya transparansi estimasi durasi pencucian. Pelanggan sering kali harus datang langsung hanya untuk mengecek mesin yang kosong. Untuk mengatasi hambatan tersebut, diperlukan sistem berbasis *Digital Twin* yang merepresentasikan kondisi fasilitas fisik ke dalam bentuk digital secara *live*, sehingga manajemen layanan menjadi jauh lebih efisien dan transparan.
