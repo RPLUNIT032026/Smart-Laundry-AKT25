@@ -66,60 +66,24 @@ Merancang antarmuka responsif untuk tiga aktor yang dijelaskan dalam dokumentasi
 > Nilai status internal harus disamakan dengan State Diagram dan model data Sprint 2 saat implementasi. Label di atas merupakan usulan tampilan, bukan bukti bahwa semua status sudah didukung backend.
 
 ## 4. Sitemap
-
-```mermaid
-flowchart TD
-    A[Login] --> B{Role akun terverifikasi}
-    B --> C[Dashboard Pelanggan]
-    B --> D[Dashboard Petugas]
-    B --> E[Dashboard Owner]
-    C --> C1[Buat Pesanan]
-    C --> C2[Pesanan Saya]
-    C2 --> C3[Detail Pesanan dan Pembayaran]
-    C --> C4[Status Mesin]
-    D --> D1[Daftar Pesanan]
-    D1 --> D2[Detail dan Ubah Status]
-    D --> D3[Monitoring Mesin]
-    E --> E1[Ringkasan Operasional]
-    E --> E2[Riwayat dan Laporan]
-    E --> E3[Monitoring Mesin]
-```
+<img width="1417" height="616" alt="sitemap2 drawio" src="https://github.com/user-attachments/assets/d2421057-15d7-4e87-8e4a-726c81dbe973" />
 
 ## 5. User Flow
 
 ### 5.1 Login
 
-```mermaid
-flowchart TD
-    A[Buka aplikasi] --> B[Masukkan username dan password]
-    B --> C{Kredensial valid?}
-    C -- Tidak --> D[Tampilkan pesan kesalahan]
-    D --> B
-    C -- Ya --> E{Role akun}
-    E --> F[Dashboard Pelanggan]
-    E --> G[Dashboard Petugas]
-    E --> H[Dashboard Owner]
-```
+<img width="862" height="652" alt="use flow drawio" src="https://github.com/user-attachments/assets/8240fe60-e893-4a59-8f3a-ddd1679348a2" />
+
 
 ### 5.2 Pelanggan
 
-```mermaid
-flowchart TD
-    A[Dashboard Pelanggan] --> B[Buat Pesanan]
-    B --> C[Pilih layanan dan isi detail]
-    C --> D[Periksa ringkasan]
-    D --> E{Konfirmasi?}
-    E -- Ubah --> C
-    E -- Ya --> F[Simpan pesanan]
-    F --> G[Nomor pesanan]
-    G --> H[Lihat status pesanan dan pembayaran]
-```
+<img width="415" height="872" alt="pelanggan drawio" src="https://github.com/user-attachments/assets/7d750514-e89b-400d-ad45-473119fbff34" />
+
 
 ### 5.3 Petugas dan Owner
 
 - **Petugas:** login → daftar pesanan → buka detail → verifikasi tindakan sesuai izin → tetapkan/lihat mesin terkait → perbarui status → tampilkan hasil.
 - **Owner:** login → dashboard → pilih periode → lihat ringkasan pesanan, status mesin, dan riwayat → buka detail bila diperlukan.
-- **Digital Twin:** simulator/perangkat → backend menerima dan memvalidasi data → status mesin diperbarui → UI menampilkan status, waktu pembaruan, dan sumber data.
 
 ## 6. Wireframe halaman
 
@@ -264,23 +228,8 @@ flowchart TD
 
 > Mermaid berikut merupakan **sketsa alur halaman**, bukan screenshot aplikasi. GitHub dapat merendernya langsung.
 
-```mermaid
-flowchart LR
-    L["LOGIN<br/"] --> P["PELANGGAN<br/>Pesanan & pembayaran"]
-    L --> T["PETUGAS<br/>Operasional laundry"]
-    L --> O["OWNER<br/>Ringkasan & laporan"]
-    P --> M["DIGITAL TWIN<br/>Monitoring mesin"]
-    T --> M
-    O --> M
-    classDef pink fill:#F8BBD0,stroke:#D78FA8,color:#3F3447,stroke-width:2px;
-    classDef yellow fill:#FFF2B3,stroke:#D8BD69,color:#3F3447,stroke-width:2px;
-    classDef lavender fill:#DDD6FE,stroke:#A69AD9,color:#3F3447,stroke-width:2px;
-    classDef mint fill:#B9EAD7,stroke:#7DBBA5,color:#3F3447,stroke-width:2px;
-    class L,P pink;
-    class T yellow;
-    class O lavender;
-    class M mint;
-```
+<img width="923" height="541" alt="alur halaman drawio" src="https://github.com/user-attachments/assets/eda54089-4d2f-487a-a21a-e0b405beb8cf" />
+
 
 ## 8. Kondisi antarmuka (UI States)
 
