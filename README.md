@@ -128,20 +128,6 @@ Teknologi pemrograman serta database akan disesuaikan dengan implementasi dan ke
 
 ---
 
-## 🚀 Status Pengembangan
-
-Smart Laundry saat ini berada dalam tahap perencanaan dan perancangan sistem.
-
-- [x] Identifikasi kebutuhan proyek
-- [x] Penyusunan Project Charter
-- [x] Perencanaan Sprint
-- [x] Penyusunan dokumentasi UML
-- [ ] Finalisasi seluruh rancangan
-- [ ] Implementasi aplikasi web
-- [ ] Implementasi simulator Digital Twin
-- [ ] Pengujian dan evaluasi sistem
-
----
 
 <div align="center">
 
