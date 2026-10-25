@@ -23,29 +23,13 @@ Daftar kebutuhan fungsional keseluruhan aplikasi *Smart Laundry* yang diurutkan 
 
 > PBI-01 s.d. PBI-05 adalah item awal Sprint 1. PBI-06 s.d. PBI-09 ditambahkan setelah perancangan UML Sprint 2 menetapkan tiga aktor beserta alur pesanan dan pembayaran; keempatnya belum masuk Sprint 1 Backlog dan menunggu perencanaan sprint berikutnya.
 
-### Keterkaitan Product Backlog dengan Diagram Sprint 2
 
-| Item | Diagram Sprint 2 yang relevan |
-| :---: | :--- |
-| PBI-01, PBI-04 | Use Case Diagram, Class Diagram (kelas mesin), State Diagram Status Mesin |
-| PBI-02 | Activity Diagram Monitoring Status Mesin Cuci, State Diagram Status Mesin, Context Model (aliran status dari mesin) |
-| PBI-03 | Use Case Diagram, Sequence Diagram Pelanggan |
-| PBI-05, PBI-09 | Sequence Diagram Owner, Class Diagram |
-| PBI-06 | Use Case Diagram, Sequence Diagram Pelanggan / Petugas / Owner |
-| PBI-07 | Sequence Diagram Pelanggan dan Petugas, State Diagram Status Pesanan Laundry, Class Diagram |
-| PBI-08 | Sequence Diagram Pelanggan, Class Diagram |
-| Seluruh PBI | Component Diagram dan Deployment Diagram (arsitektur dan penempatan sistem) |
-
-> Pemetaan di atas disusun dari judul dan peruntukan tiap diagram. Detail isi gambar belum diverifikasi satu per satu.
-
----
-
-## 2. Sprint 1 Backlog (Target Pekerjaan Saat Ini)
+## 2. Backlog
 
 ### A. Sprint Goal
 Menghasilkan dokumen perencanaan proyek yang komprehensif, merancang arsitektur basis data awal, serta membangun halaman antarmuka web dasar yang terhubung dengan simulasi data unit mesin cuci.
 
-### B. Ringkasan Sprint 1
+### B. Ringkasan
 * **Jumlah PBI yang Dikerjakan:** 3 Item Utama (PBI-01 s.d. PBI-03)
 * **Total Estimasi Waktu:** 36 Jam Kerja Tim
 * **Durasi Sprint:** 2 Minggu (Siklus Perencanaan Awal)
