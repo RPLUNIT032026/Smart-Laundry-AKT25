@@ -148,6 +148,21 @@ Data mesin pada tahap awal berasal dari simulator dan ditampilkan dengan label S
 +---------------------------------------------------+
 ```
 
+### Ketentuan Pembuatan Pesanan
+
+Pelanggan dapat memilih layanan laundry dan membuat pesanan.
+
+Berat laundry dan total harga harus tercatat sebelum pesanan disimpan.
+
+Apabila berat laundry belum diketahui, petugas melakukan penimbangan dan konfirmasi harga sebelum pesanan diproses.
+
+Informasi yang ditampilkan meliputi:
+- Jenis layanan
+- Berat laundry
+- Estimasi atau total harga
+- Status pesanan
+- Informasi pembayaran
+
 ### 6.4 Pelanggan — Detail Pesanan dan Pembayaran
 
 ```text
