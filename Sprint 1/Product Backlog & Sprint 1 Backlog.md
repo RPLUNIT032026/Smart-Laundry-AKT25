@@ -24,32 +24,29 @@ Daftar kebutuhan fungsional keseluruhan aplikasi *Smart Laundry* yang diurutkan 
 > PBI-01 s.d. PBI-05 adalah item awal Sprint 1. PBI-06 s.d. PBI-09 ditambahkan setelah perancangan UML Sprint 2 menetapkan tiga aktor beserta alur pesanan dan pembayaran; keempatnya belum masuk Sprint 1 Backlog dan menunggu perencanaan sprint berikutnya.
 
 
-## 2. Backlog
+## Sprint 1 Backlog
 
-### A. Sprint Goal
-Menghasilkan dokumen perencanaan proyek yang komprehensif, merancang arsitektur basis data awal, serta membangun halaman antarmuka web dasar yang terhubung dengan simulasi data unit mesin cuci.
+### Sprint Goal
+Menyusun dasar pengembangan Smart Laundry Digital Twin melalui perencanaan kebutuhan, perancangan UI/UX, desain database, dan rancangan struktur kode.
 
-### B. Ringkasan
-* **Jumlah PBI yang Dikerjakan:** 3 Item Utama (PBI-01 s.d. PBI-03)
-* **Total Estimasi Waktu:** 36 Jam Kerja Tim
-* **Durasi Sprint:** 2 Minggu (Siklus Perencanaan Awal)
+### Fokus Sprint 1
+1. Menyusun Project Charter.
+2. Menghitung estimasi Function Point.
+3. Menyusun Product Backlog.
+4. Merancang UI/UX sistem.
+5. Merancang struktur database.
+6. Menyiapkan dokumentasi inisialisasi proyek.
 
-### C. Daftar Tugas (Task List)
-Urutan pengerjaan tugas disesuaikan dengan ketergantungan sistem (basis data dan rancangan awal terlebih dahulu):
+### Definition of Done
+Sprint 1 dinyatakan selesai apabila:
 
-| ID Task | Fitur / Bagian | Deskripsi Pekerjaan | PIC / Peran | Estimasi |
-| :---: | :--- | :--- | :---: | :---: |
-| **T-01** | Dokumen Manajemen | Menyusun Project Charter dan analisis Function Point. | System Analyst | 6 jam |
-| **T-02** | Desain UI/UX | Membuat sketsa *wireframe* dan tata letak dashboard utama. | UI/UX Designer | 8 jam |
-| **T-03** | Database Setup | Membangun skema tabel relasional untuk data mesin dan ruang tunggu. | Backend Engineer | 8 jam |
-| **T-04** | Frontend Dasar | Membangun kerangka HTML, CSS, dan JS untuk tampilan web. | Development Team | 10 jam |
-| **T-05** | Integrasi & Setup Repo | Inisialisasi GitHub Organization dan penataan repositori kode. | Project Lead | 4 jam |
+- Dokumen Project Charter telah disusun.
+- Product Backlog dan Sprint Backlog tersedia.
+- Perhitungan Function Point telah dibuat.
+- Rancangan UI/UX telah didokumentasikan.
+- Skema database awal telah dirancang.
+- Struktur kode awal telah didokumentasikan.
+- Seluruh dokumen Sprint 1 telah tersedia di repository GitHub.
 
----
+Implementasi dan pengujian aplikasi dilakukan pada tahap pengembangan berikutnya.
 
-## 3. Definition of Done (DoD)
-Kriteria penyelesaian agar sebuah tugas pada Sprint 1 dianggap tuntas:
-* Dokumen perencanaan dan perancangan telah tersusun rapi dalam format Markdown di repositori.
-* Desain antarmuka (*wireframe/mockup*) telah ditinjau dan disetujui oleh seluruh anggota tim.
-* Struktur kode awal (*HTML/CSS/JS*) dapat dijalankan pada peladen lokal tanpa adanya galat (*error*) kritis.
-* Seluruh berkas kode dan dokumen telah berhasil di-*push* ke dalam repositori GitHub kelompok.
