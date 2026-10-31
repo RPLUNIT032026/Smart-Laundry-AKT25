@@ -51,19 +51,30 @@ Merancang antarmuka responsif untuk tiga aktor yang dijelaskan dalam dokumentasi
 - Input: label selalu terlihat, placeholder hanya contoh, pesan error di bawah field.
 - Desktop: sidebar dan area konten. Mobile: navigasi ringkas, kartu satu kolom.
 
-### 3.3 Aturan badge status
 
-| Domain | Status contoh | Tampilan |
+### 3.3 Aturan Status Sistem
+
+Status pada antarmuka harus mengikuti rancangan model data.
+
+| Kategori | Status | Tampilan |
 |---|---|---|
-| Mesin | Available / Tersedia | Mint + teks **Tersedia** |
-| Mesin | Running / Berjalan | Baby Blue + teks **Berjalan** |
-| Mesin | Completed / Selesai | Lavender + teks **Siklus selesai** |
-| Mesin | Maintenance / Perawatan | Abu-lavender + teks **Perawatan** |
-| Mesin | Error / Gangguan | Coral + teks **Gangguan** |
-| Pesanan | Menunggu / Diproses / Selesai / Dibatalkan | Badge dengan label sesuai alur pesanan |
-| Pembayaran | Belum dibayar / Menunggu verifikasi / Lunas / Gagal | Badge pembayaran terpisah |
+| Mesin | Available | Tersedia |
+| Mesin | Running | Berjalan |
+| Mesin | Completed | Selesai |
+| Mesin | Maintenance | Perawatan |
+| Mesin | Error | Gangguan |
+| Pesanan | Waiting | Menunggu |
+| Pesanan | Processing | Diproses |
+| Pesanan | Finished | Selesai |
+| Pembayaran | Pending | Menunggu Pembayaran |
+| Pembayaran | Paid | Lunas |
+| Pembayaran | Failed | Gagal |
 
-> Nilai status internal harus disamakan dengan State Diagram dan model data Sprint 2 saat implementasi. Label di atas merupakan usulan tampilan, bukan bukti bahwa semua status sudah didukung backend.
+Status mesin, pesanan, dan pembayaran ditampilkan secara terpisah.
+
+Status Completed pada mesin tidak otomatis mengubah status pesanan menjadi Finished.
+
+Data mesin pada tahap awal berasal dari simulator dan ditampilkan dengan label SIMULASI.
 
 ## 4. Sitemap
 <img width="1417" height="616" alt="sitemap2 drawio" src="https://github.com/user-attachments/assets/d2421057-15d7-4e87-8e4a-726c81dbe973" />
