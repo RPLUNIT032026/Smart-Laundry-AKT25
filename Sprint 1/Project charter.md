@@ -1,27 +1,63 @@
-# Pengembangan Sistem Digital Twin Smart Laundry untuk Pemantauan Status Operasional dan Kapasitas Ruang Secara Live
 
-## 1. Latar Belakang Masalah
-Pengelolaan fasilitas *laundry* koin mandiri saat ini masih sering menemui kendala operasional, seperti ketidakpastian informasi ketersediaan mesin cuci, antrean pengunjung yang menumpuk di lokasi, serta kurangnya transparansi estimasi durasi pencucian. Pelanggan sering kali harus datang langsung hanya untuk mengecek mesin yang kosong. Untuk mengatasi hambatan tersebut, diperlukan sistem berbasis *Digital Twin* yang merepresentasikan kondisi fasilitas fisik ke dalam bentuk digital secara *live*, sehingga manajemen layanan menjadi jauh lebih efisien dan transparan.
+# Project Charter — Smart Laundry Digital Twin
+
+## 1. Latar Belakang
+Smart Laundry merupakan rancangan aplikasi berbasis web yang membantu pengelolaan layanan laundry melalui teknologi Digital Twin. Sistem dirancang untuk memantau status mesin, estimasi waktu pencucian, antrean, pesanan, serta pembayaran secara digital.
+
+Pada tahap awal, Digital Twin menggunakan simulator perangkat lunak tanpa perangkat IoT fisik.
 
 ## 2. Tujuan Proyek
-* Membangun representasi digital (*digital twin*) dari unit mesin cuci fisik yang mencerminkan status operasional secara akurat.
-* Memantau ketersediaan mesin (aktif, siaga, selesai) secara *live*.
-* Menyediakan informasi tingkat kepadatan area ruang tunggu bagi pelanggan.
-* Menampilkan antarmuka web interaktif yang memuat rekap data dan riwayat penggunaan.
+- Memantau status dan ketersediaan mesin laundry.
+- Menampilkan estimasi waktu pencucian.
+- Mengelola data pelanggan dan pesanan.
+- Mengelola pembayaran dan riwayat transaksi.
+- Memantau kapasitas dan antrean laundry.
+- Menyediakan dashboard operasional.
 
 ## 3. Ruang Lingkup Sistem
-* **Modul Pemantauan Mesin:** Menampilkan status terkini dan sisa waktu siklus pencucian tiap unit mesin.
-* **Modul Kapasitas Ruang:** Indikator visual tingkat keramaian atau jumlah pengunjung di area tunggu.
-* **Modul Manajemen Data:** Panel administratif bagi pengelola untuk memperbarui status unit.
+Sistem mencakup:
+1. Login dan logout pengguna.
+2. Monitoring mesin menggunakan Digital Twin.
+3. Pengelolaan pelanggan dan pesanan.
+4. Pengelolaan pembayaran digital.
+5. Monitoring kapasitas dan antrean.
+6. Dashboard dan laporan operasional.
 
-## 4. Metodologi & Manajemen Sprint
-* **Metode Pengembangan:** Scrum Framework (Agile).
-* **Durasi Sprint:** Siklus iterasi 2 minggu per tahapan.
-* **Tools Manajemen Tugas:** GitHub Projects.
+Pengembangan fitur dilakukan secara bertahap sesuai Product Backlog.
 
-## 5. Struktur Tim Pengembang
-| Nama Lengkap | NIM |
-| :--- | :---: | 
-| Ilma Zakiyah | 250504151 | 
-| M.Syauqan Athaya | 250504164 |
+## 4. Pengguna Sistem
+- Pelanggan: Membuat pesanan dan memantau layanan.
+- Petugas: Mengelola pesanan, pembayaran, dan operasional.
+- Owner: Memantau mesin, transaksi, dan laporan.
+
+Mesin laundry bukan aktor pengguna, melainkan sumber data yang direpresentasikan melalui simulator.
+
+## 5. Metodologi
+- Metode: Agile Scrum.
+- Durasi Sprint: 2 minggu.
+- Manajemen Proyek: GitHub Projects.
+- Pemodelan Sistem: UML.
+
+## 6. Teknologi
+- Platform: Aplikasi Web.
+- Frontend: HTML, CSS, JavaScript.
+- Backend: Node.js dan Express (rencana).
+- Database: MySQL (rencana).
+- Digital Twin: Simulator mesin laundry.
+
+## 7. Tahapan Pengembangan
+### Sprint 1
+Perencanaan proyek, analisis kebutuhan, rancangan UI/UX, database, dan struktur awal sistem.
+
+### Sprint 2
+Pemodelan sistem menggunakan diagram UML berdasarkan kebutuhan yang telah ditetapkan.
+
+### Sprint Selanjutnya
+Implementasi, integrasi, pengujian, dan penyempurnaan fitur.
+
+## 8. Tim Pengembang
+| Nama | NIM |
+|---|---|
+| Ilma Zakiyah | 250504151 |
 | Rati Rifa | 250504152 |
+| M. Syauqan Athaya | 250504164 |
